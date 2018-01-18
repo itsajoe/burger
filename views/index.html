@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Burgers</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../public/assets/css/style.css">
+        
+	</head>
+	<body>
+		<div class="container">
+            <div class="row">
+                <img src="../public/assets/img/burger-flat.png" alt="#">
+            </div>
+            <!-- row -->
+            <div class="row">
+                <h1>Eat the Burger Fool</h1>
+            </div>
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-4" id="notEaten">
+                    <div id="app"></div>
+                </div>
+                <div class="col-sm-4" id="eat">
+                    <div id="eatIt"></div>
+                </div>
+                <div class="col-sm-4" id="eaten">
+                    <div id="ate"></div>
+                </div>
+                <!-- put burgers here -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="whatBurger">What Kind of Burger Would You Like to Eat:</label>
+                    <textarea class="form-control" rows="5" id="whatBurger"></textarea>
+                    <button class="btn btn-primary" id="submit">Submit</button>
+                  </div>
+                  <!-- form -->
+                </div>
+                <!-- column -->
+            </div>
+            <!-- row -->
+        </div> 
+       <!-- container -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+  </script>
+  <script type="text/javascript">
+  $("#submit").on("click", function() {
+    var name = $("#whatBurger").val().trim();
+    $("#whatBurger").val("");
+    // not eaten
+    var newDiv = $("<div>").addClass("jumbotron non");
+    var p = $("<p>").text(name);
+    newDiv.append(p);
+    $("#app").append(newDiv);
+    // button
+    var newButton = $("<button>").addClass("btn btn-primary one row");
+    newButton.text("Eat It");
+    $("#eatIt").append(newButton);
+    $(".one").on("click", function() {
+        $(this).hide();
+        $(".non").hide();
+        var difDiv = $("<div>").addClass("done");
+        difDiv.append(p);
+        $("#ate").append(difDiv);
+    });
+  });
+  </script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<div class="container">
+            <div class="row">
+                <img src="/assets/img/burger-flat.png" alt="#">
+            </div>
+            <!-- row -->
+            <div class="row">
+                <h1>Eat the Burger Fool</h1>
+            </div>
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-8" id="notEaten">
+                    {{#each burger}}
+                        {{#unless devoured}}
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="jumbotron non">
+                                        <p>{{this.id}} {{this.burger_name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4" id="eat">
+                                
+                                        <button class="btn btn-primary one row" id="{{this.id}}">Eat it</button>
+                                
+                            </div>
+                        {{/unless}}
+                    {{/each}}
+                </div>
+                <div class="col-sm-4" id="eaten">
+                    {{#each burger}}
+                        {{#if devoured}}
+                            <div class="done">
+                                <p>{{this.id}} {{this.burger_name}}</p>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <!-- put burgers here -->
+            </div>
+            <!-- row -->
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="whatBurger">What Kind of Burger Would You Like to Eat:</label>
+                    <textarea class="form-control" rows="5" id="whatBurger"></textarea>
+                    <button class="btn btn-primary" id="submit">Submit</button>
+                  </div>
+                  <!-- form -->
+                </div>
+                <!-- column -->
+            </div>
+            <!-- row -->
+        </div> 
+       <!-- container -->

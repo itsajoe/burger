@@ -1,0 +1,15 @@
+.container {
+    text-align: center;
+    background-color: aqua;
+}
+.non {
+    background-color: darkslateblue;
+    color: white;
+    padding: 5px;
+}
+.done {
+    background-color: grey;
+    color: black;
+    padding: 3px;
+    border-radius: 2px;
+}
